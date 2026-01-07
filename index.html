@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التطبيقات الفاخرة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-glow: #00d2ff;
+            --secondary-glow: #3a7bd5;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #050505;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(58, 123, 213, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(0, 210, 255, 0.15) 0%, transparent 40%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+        /* تعديلات مكثفة لضمان عدم انقصاص النص */
+        .glitch-text {
+            display: block; /* تغيير من inline-block لضمان عرض السطر بالكامل */
+            line-height: 2 !important; /* زيادة المسافة بين السطور بشكل كبير */
+            padding-bottom: 20px !important; /* هامش سفلي كبير داخل عنصر النص */
+            margin-bottom: -20px; /* تعويض المسافة الزائدة */
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .luxury-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .luxury-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--primary-glow);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 
+                        0 0 25px rgba(0, 210, 255, 0.3);
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+/* الحاوية الأساسية */
+.icon-box {
+    width: 90px;
+    height: 90px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 22px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 1;
+    overflow: visible; /* للسماح للأيقونة بالخروج من الحدود */
+}
+
+/* الأيقونة (الصورة) */
+.icon-box img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    /* تحويل مركزي ناعم */
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); 
+    transform: translateZ(0);
+    z-index: 10;
+}
+
+/* التأثير عند الحوم (Hover) */
+.luxury-card:hover .icon-box img {
+    /* الانقلاع للأمام فقط عبر التكبير و إضافة ظل عميق */
+    transform: scale(1.5); /* تكبير الأيقونة لتبدو قريبة جداً */
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.8)); /* ظل يوحي بالارتفاع عن القاعدة */
+}
+
+.luxury-card:hover .icon-box {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary-glow);
+    box-shadow: inset 0 0 15px rgba(0, 210, 255, 0.2);
+}
+    </style>
+</head>
+<body class="flex flex-col items-center py-12 px-4">
+
+    <div class="text-center mb-16 w-full max-w-2xl overflow-visible">
+        <h1 class="text-6xl md:text-7xl font-extrabold text-transparent bg-gradient-to-r from-cyan-400 to-blue-600 glitch-text">
+            تطبيقاتي 
+        </h1>
+        <div class="h-1.5 w-32 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto rounded-full"></div>
+        <p class="text-gray-400 text-lg font-light tracking-widest mt-6"> جميع إبداعات أسامة </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
+        <a href="https://ossamasal2012.github.io/clockW/" target="_blank" class="luxury-card p-8 flex flex-col items-center">
+            <div class="icon-box">
+                <img src="https://i.ibb.co/whz1H25j/Gemini-Generated-Image-x1o79lx1o79lx1o7.png" alt="Clock">
+            </div>
+            <h3 class="text-xl font-bold mb-2"> SMART CLOCK </h3>
+            <p class="text-gray-500 text-sm text-center"> الساعة الاحترافية التي تدعم جميع الميزات</p>
+        </a>
+
+        <a href="https://ossamasal2012.github.io/study-pro" target="_blank" class="luxury-card p-8 flex flex-col items-center">
+            <div class="icon-box">
+                <img src="data:image/jpeg;base64,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" alt="Study">
+            </div>
+            <h3 class="text-xl font-bold mb-2"> STUDY PRO</h3>
+            <p class="text-gray-500 text-sm text-center">أدوات تنظيم الوقت والجهد</p>
+        </a>
+
+        <a href="https://ossamasal2012.github.io/FlipClock/" target="_blank" class="luxury-card p-8 flex flex-col items-center">
+            <div class="icon-box">
+                <img src="https://i.ibb.co/qMpZTTRb/Gemini-Generated-Image-91jttc91jttc91jt.png" alt="Flip Clock">
+            </div>
+            <h3 class="text-xl font-bold mb-2">FLIP CLOCK</h3>
+            <p class="text-gray-500 text-sm text-center">الساعة الرقمية الأروع</p>
+        </a>
+
+        <a href="https://ossamasal2012.github.io/Alarm-gg/" target="_blank" class="luxury-card p-8 flex flex-col items-center">
+            <div class="icon-box">
+                <img src="https://i.ibb.co/S4MCGyyH/Untitled-2.png" alt="Alarm">
+            </div>
+            <h3 class="text-xl font-bold mb-2">ALARM</h3>
+            <p class="text-gray-500 text-sm text-center">كل ما تحتاجه للاستيقاظ بنشاط</p>
+        </a>
+
+        <a href="https://ossamasal2012.github.io/OSSAMATV/" target="_blank" class="luxury-card p-8 flex flex-col items-center">
+            <div class="icon-box">
+                <img src="https://i.ibb.co/QFPBKbLz/Gemini-Generated-Image-ekxxfoekxxfoekxx.png" alt="TV">
+            </div>
+            <h3 class="text-xl font-bold mb-2">OSSAMA TV</h3>
+            <p class="text-gray-500 text-sm text-center">بث مباشر ومحتوى حصري</p>
+        </a>
+
+        <a href="https://ossamasal2012.github.io/KICK/" target="_blank" class="luxury-card p-8 flex flex-col items-center">
+            <div class="icon-box">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAgVBMVEUAAABT/BhV/xhAwRIGEwEYSQc4qhAcVggVQAYJGwM4rBA5rhBR9xc9uhINKQRQ8hcpfww7sxEzmw9DyxNJ3hUhZgowlA5BxhMLIQM/vhIshQ0FDgFEzhQPLQQoeQsKHgMRMwUHFgITOQUtiw0xlQ4lcwtL5BZJ3xUDCQEeXQkiaQpr1dlnAAACYklEQVR4nO3b61qqQBSA4RiovRPLsAN5LLel7e7/ApMhq5E1MqBATd/7l2FaX/aYIp6cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAX2KchrvSpbFiVFgQpo/6yKR4bphGX8+dCysM1wu97p+wbmRMsRTmHDsV9lSRuXcgrPirj0TCEbX4eu5QWmE41+tOhSOBMcWFsCJ2KjxTwS51YazoFxYEH4XCIeMxHAorzOXbwuKhvjFFIszZo5BCCh0Kn45WGDdRGPYHGWmu0sI/gT5X+O1ULbzt23Y6vPDa+gA4FJY9eO6F9ikopJDCn1w4ii43JtOOC1+yKe6fGyj8eKltn6uNwqB0ivqF5XO1Ulh6LoUU7tvb48Kd9/jCgj2F0nv8h1qFB77H37fztBdvJLNahWdxQRLVKRzonZJ5E4XGRaqqhfYpqhWqG6e0eoV3FFJIYXeF70/uw44L8ylWDRSq1XycOe22UC2vsimemyiU/jA6KIzse3hSeE8hhRR2Xlg90P0/vr62Puj6lXc+xbSRwvx/7VPHhfkY60YK8/09ftVGIYU/pnB4nl1qn73UKtSX6U2zWoXriT73oYFC/6+1bX+Ax9dL3/emkMLP5d0Uev/5oVrHyUa8sm7eTqGeIkntU3jyOf5/7wu5F4PC3104tT5buxSWPNU7F75adzq88PYqM691f+lsrM8NyxLLCx/znYTblzy7g/a73iPs/13QFLZR2CsvFFa0UKiOVRgLVxZcvxW0kC5LVPxW0PYqRtGxvhUEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA88AbXaUggAy9jOgAAAABJRU5ErkJggg==" alt="Kick">
+            </div>
+            <h3 class="text-xl font-bold mb-2"> KICK </h3>
+            <p class="text-gray-500 text-sm text-center"> بث في عالم الألعاب</p>
+        </a>
+    </div>
+
+    <footer class="mt-20 py-8 border-t border-white/5 w-full max-w-4xl text-center">
+        <p class="text-gray-600 text-sm tracking-widest uppercase">تم التصميم بمعايير تقنية عالية &copy; 2026</p>
+    </footer>
+
+</body>
+</html>
